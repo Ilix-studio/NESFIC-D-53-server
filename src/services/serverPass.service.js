@@ -10,6 +10,7 @@ import { getAsr } from './asr/index.js';
 import * as audit from './audit.service.js';
 import { sameValue } from './caseState.js';
 import { getMapper } from './mapper/index.js';
+import { checkClip } from './voice.service.js';
 
 async function proposeDifferences(caseDoc, clip, mapped, { source, engine }) {
   const created = [];
@@ -61,6 +62,7 @@ export async function runServerPass(clipId) {
     const transcript = await getAsr().transcribe(clip.filePath, caseDoc.langPack, { section: clip.section, mimeType: clip.mimeType });
     clip.transcript = transcript;
     clip.processingStatus = 'done';
+    await checkClip(clip, caseDoc);
     const mapper = getMapper();
     const mapped = await mapper.map({
       transcript,

@@ -1,4 +1,5 @@
-// Downloads the speech models listed in src/services/asr/models/speech-models.json into
+// Downloads the speech models listed in src/services/asr/models/speech-models.json (and the
+// speaker model in speaker-models.json) into
 // MODELS_DIR, from the pinned Hugging Face revision, and checks each file's SHA-256.
 // Usage: npm run fetch-models [-- as brx]   (no languages = all)
 // The server then transcribes with them and serves them to phones (GET /api/v1/models).
@@ -9,6 +10,7 @@ import path from 'node:path';
 
 import { env } from '../src/config/env.js';
 import { SPEECH_MODELS } from '../src/services/asr/indicconformer.asr.js';
+import { SPEAKER_MODELS } from '../src/services/speaker/wespeaker.speaker.js';
 
 export async function sha256(file) {
   const hash = createHash('sha256');
@@ -38,6 +40,11 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const langs = process.argv.slice(2);
   mkdirSync(env.MODELS_DIR, { recursive: true });
   for (const model of SPEECH_MODELS.filter((m) => !langs.length || langs.includes(m.lang))) {
+    process.stdout.write(`${model.id} (${(model.sizeBytes / 1e6).toFixed(0)} MB) ... `);
+    console.log(await fetchPinned(hfUrl(model.source), path.join(env.MODELS_DIR, model.file), model.sha256));
+  }
+  // The officer voice check model (small, language-independent) is always fetched.
+  for (const model of SPEAKER_MODELS) {
     process.stdout.write(`${model.id} (${(model.sizeBytes / 1e6).toFixed(0)} MB) ... `);
     console.log(await fetchPinned(hfUrl(model.source), path.join(env.MODELS_DIR, model.file), model.sha256));
   }

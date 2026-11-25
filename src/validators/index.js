@@ -23,6 +23,20 @@ export const loginBody = z.object({
   password: z.string().min(1).max(128),
 });
 
+export const createOfficerBody = z.object({
+  badgeNo: z.string().trim().min(1).max(32),
+  password: z.string().min(8, 'at least 8 characters').max(128),
+  name: z.string().trim().min(1).max(100),
+  policeStation: z.string().trim().min(1).max(100),
+  district: z.string().trim().min(1).max(100).optional(),
+  role: z.enum(['io', 'supervisor', 'admin']).default('io'),
+});
+
+export const voiceEnrolBody = z.object({
+  lang: langCode,
+  passageId: z.string().trim().min(1).max(40),
+});
+
 export const createCaseBody = z.object({
   clientId,
   startedAt: z.coerce.date(),

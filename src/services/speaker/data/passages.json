@@ -1,0 +1,27 @@
+{
+  "note": "Passages an Investigating Officer reads aloud once, in the language they choose, to record their voiceprint (about 30-40 seconds of speech). Synthetic text about a made-up crash: no real people or places. DRAFTS: every passage needs a native speaker to check it before the pilot; the Bodo text is a placeholder.",
+  "minSeconds": 20,
+  "passages": [
+    {
+      "id": "as-1",
+      "lang": "as",
+      "status": "draft",
+      "text": "মই এজন তদন্তকাৰী বিষয়া। আজি মই এটা পথ দুৰ্ঘটনাৰ ঠাইত কাম কৰি আছোঁ। ৰাতি ন বজাত ৰাষ্ট্ৰীয় ঘাইপথত এখন ট্ৰাক আৰু এখন মটৰ চাইকেলৰ মাজত খুন্দা লাগে। পথৰ কাষত পোহৰ কম আছিল আৰু বৰষুণে পথ পিছল কৰিছিল। দুজন লোক আহত হৈছে আৰু তেওঁলোকক এম্বুলেন্সেৰে জিলা চিকিৎসালয়লৈ নিয়া হৈছে। মই সকলো তথ্য সাৱধানে, স্পষ্টকৈ আৰু শুদ্ধকৈ লিখি ৰাখিম, যাতে প্ৰতিবেদন সম্পূৰ্ণ হয়।",
+      "en": "I am an investigating officer. Today I am working at the scene of a road crash. At nine at night, a truck and a motorcycle collided on the national highway. There was little light at the roadside and the rain had made the road slippery. Two people were injured and were taken to the district hospital by ambulance. I will write down every detail carefully, clearly and correctly, so that the report is complete."
+    },
+    {
+      "id": "bn-1",
+      "lang": "bn",
+      "status": "draft",
+      "text": "আমি একজন তদন্তকারী অফিসার। আজ আমি একটি সড়ক দুর্ঘটনার জায়গায় কাজ করছি। রাত নটায় জাতীয় সড়কে একটি ট্রাক আর একটি মোটরসাইকেলের মধ্যে ধাক্কা লাগে। রাস্তার পাশে আলো কম ছিল এবং বৃষ্টিতে রাস্তা পিছল হয়ে গিয়েছিল। দুজন মানুষ আহত হয়েছেন এবং তাঁদের অ্যাম্বুলেন্সে করে জেলা হাসপাতালে নিয়ে যাওয়া হয়েছে। আমি সব তথ্য সাবধানে, পরিষ্কারভাবে এবং সঠিকভাবে লিখে রাখব, যাতে প্রতিবেদন সম্পূর্ণ হয়।",
+      "en": "I am an investigating officer. Today I am working at the scene of a road crash. At nine at night, a truck and a motorcycle collided on the national highway. There was little light at the roadside and the rain had made the road slippery. Two people were injured and were taken to the district hospital by ambulance. I will write down every detail carefully, clearly and correctly, so that the report is complete."
+    },
+    {
+      "id": "brx-1",
+      "lang": "brx",
+      "status": "placeholder",
+      "text": "आं मोनसे सानदांगिरि बिसोर। दिनै आं मोनसे लामा जाथाय जायगायाव खामानि मावदों। हर गुबाव हादोरारि लामाव मोनसे ट्राक आरो मोनसे मटर साइकेल गोग्लैनाय जादों। लामानि सेराव सोरां खमसि दङमोन आरो अखा हाबनायनि थाखाय लामा गिलि जादोंमोन। मोननै सुबुं सावगारि मोनदों आरो बिसोरखौ एम्बुलेन्सजों जिला हस्पितालाव लाबोनाय जादों। आं गासैबो बिबुंथिखौ होसिखानै, गेवरै आरो थारै लिरनानै दोनगोन, जाहाथे फोरमायनाया आबुंसे जाथार।",
+      "en": "I am an investigating officer. Today I am working at the scene of a road crash. At nine at night, a truck and a motorcycle collided on the national highway. There was little light at the roadside and the rain had made the road slippery. Two people were injured and were taken to the district hospital by ambulance. I will write down every detail carefully, clearly and correctly, so that the report is complete."
+    }
+  ]
+}

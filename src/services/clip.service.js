@@ -11,6 +11,7 @@ import * as caseService from './case.service.js';
 import { applyProposals, openFollowups, recheck } from './caseState.js';
 import { getMapper } from './mapper/index.js';
 import { enqueue } from './serverPassQueue.js';
+import { checkClip } from './voice.service.js';
 
 /**
  * Upload -> ASR -> mapper -> rules -> follow-ups. If ASR or mapping fails the clip is kept
@@ -93,6 +94,7 @@ async function runPipeline(caseDoc, clip, officer) {
   try {
     const transcript = await getAsr().transcribe(clip.filePath, caseDoc.langPack, { section: clip.section });
     clip.transcript = transcript;
+    await checkClip(clip, caseDoc);
     const proposals = await getMapper().map({
       transcript,
       section: clip.section,

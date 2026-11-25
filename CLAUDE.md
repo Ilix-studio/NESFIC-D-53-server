@@ -225,3 +225,12 @@ Everything in this brief is implemented and covered by `npm test` (rules, mapper
 - Tests: `tests/photos.cloudinary.test.js` mocks the SDK (`jest.unstable_mockModule`); `api.test.js` covers local photos.
 - Open: Cloudinary hosting is outside India by default; check the account's region against the India-hosting rule above before real case photos are stored there.
 
+### Accounts and officer voice check (25 Nov 2026)
+
+- No public sign-up. `POST /officers` (`officer.service.createOfficer`): admin creates any role; supervisor creates `io` in their own district only; `createdBy` is stored. `npm run seed` adds `SUP-1001` / `demo1234` (supervisor) beside `IO-1001`.
+- Passages: `shared/voice/passages.json` (as / bn / brx, DRAFT; Bodo is a placeholder; `minSeconds` 20) → `src/services/speaker/data/`. `GET /voice/passages`.
+- `POST /voice/enrol` (multipart `audio`, `lang`, `passageId`): speaker engine → `Officer.voice = { lang, passageId, model, embedding[256], seconds, enrolledAt }`. The recording is deleted; only the voiceprint is kept. 503 when no speaker engine. `voice` is in `/auth/login` and `/auth/me` (the officer's own profile) so the phone can check offline.
+- `services/speaker`: `SPEAKER_ENGINE=wespeaker|mock|off` (default wespeaker; skipped while the model file is missing). WeSpeaker ResNet34 (Apache-2.0, `shared/models/speaker-models.json`, fetched by `npm run fetch-models`, served by `/models`). `fbank.js` = Kaldi fbank + mean removal, checked against `test-data/fbank-reference.json` (kaldi-native-fbank); keep in step with the app's `modules/voicedar-asr/.../Fbank.kt`. Match = cosine ≥ 0.5 (`matchThreshold`, `SPEAKER_THRESHOLD`); measured on synthetic voices: same voice 0.89-0.95, different 0.11-0.32. Calibrate on pilot recordings.
+- `voice.service.checkClip` runs after ASR in `clip.service.runPipeline` and the server pass: `Clip.speaker = { score, match, engine, threshold }`; a mismatch logs `speaker_mismatch` (audit). It never fails or blocks a clip; clips under 1.5 s are not checked.
+- Tests: `voice.test.js` (accounts, enrolment, clip check; mock engine from `tests/setup-env.cjs`), `speaker.test.js` (fbank vs Kaldi; real model when installed).
+

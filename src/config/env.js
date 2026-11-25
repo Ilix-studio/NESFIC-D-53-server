@@ -21,6 +21,10 @@ const envSchema = z.object({
   CLOUDINARY_API_KEY: z.string().optional(),
   CLOUDINARY_API_SECRET: z.string().optional(),
   CLOUDINARY_FOLDER: z.string().default('voicedar/photos'),
+  // Officer voice check: wespeaker (model from npm run fetch-models; checks are skipped until it
+  // is installed) | mock (tests only) | off. SPEAKER_THRESHOLD overrides the model's match score.
+  SPEAKER_ENGINE: z.enum(['wespeaker', 'mock', 'off']).default('wespeaker'),
+  SPEAKER_THRESHOLD: z.coerce.number().min(-1).max(1).optional(),
   // Speech model files (.onnx), also served to phones from GET /api/v1/models/:id/file.
   MODELS_DIR: z.string().default('./models'),
   // Comma-separated browser origins allowed by CORS. Native apps send no Origin header.
