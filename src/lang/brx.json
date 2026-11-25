@@ -1,0 +1,21 @@
+{
+  "code": "brx",
+  "name": "बर'",
+  "name_en": "Bodo",
+  "placeholder": true,
+  "note": "PLACEHOLDER Bodo pack: intentionally empty. Number words, ordinals, time words, keywords and questions must be written with Bodo-speaking officers. Until then the offline mapper only reads digits and number plates, and questions fall back to English.",
+  "digits": "०१२३४५६७८९",
+  "letters": "\\u0900-\\u097F",
+  "numberWords": {},
+  "classifiers": [],
+  "approx": [],
+  "ordinals": {},
+  "negations": [],
+  "time": { "hourMarkers": [], "periods": {} },
+  "keywords": {},
+  "numberCues": {},
+  "textPatterns": {},
+  "questions": {},
+  "ruleQuestions": {},
+  "instancePrefix": {}
+}

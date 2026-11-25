@@ -1,0 +1,126 @@
+{
+  "code": "bn",
+  "name": "বাংলা",
+  "name_en": "Bengali",
+  "placeholder": true,
+  "note": "PLACEHOLDER Bengali pack: a first draft of keywords and wording for testing the offline mapper. Have it checked and extended by Bengali-speaking officers before any field use. Questions fall back to English.",
+  "digits": "০১২৩৪৫৬৭৮৯",
+  "letters": "\\u0980-\\u09FF",
+  "numberWords": {
+    "শূন্য": 0, "এক": 1, "দুই": 2, "দু": 2, "তিন": 3, "চার": 4, "পাঁচ": 5,
+    "ছয়": 6, "সাত": 7, "আট": 8, "নয়": 9, "দশ": 10, "এগারো": 11, "বারো": 12,
+    "কুড়ি": 20, "পঁচিশ": 25, "তিরিশ": 30, "চল্লিশ": 40, "পঞ্চাশ": 50
+  },
+  "classifiers": ["জন", "টি", "টা", "খানা", "খানি"],
+  "approx": ["প্রায়", "আনুমানিক"],
+  "ordinals": { "প্রথম": 1, "দ্বিতীয়": 2, "তৃতীয়": 3, "চতুর্থ": 4, "পঞ্চম": 5 },
+  "negations": ["না", "নেই", "নাই", "হয়নি", "পায়নি", "যায়নি"],
+  "time": {
+    "hourMarkers": ["টার সময়", "টায়", "টা"],
+    "periods": {
+      "সকাল": "morning",
+      "সকালে": "morning",
+      "দুপুর": "noon",
+      "বিকেল": "afternoon",
+      "সন্ধ্যা": "evening",
+      "রাত": "night",
+      "রাতে": "night"
+    }
+  },
+  "keywords": {
+    "severity": {
+      "fatal": ["মারা গেছে", "মৃত্যু হয়েছে", "ঘটনাস্থলেই মৃত্যু"],
+      "grievous": ["গুরুতর আহত", "গুরুতরভাবে আহত"],
+      "minor": ["সামান্য আহত", "হালকা আহত"],
+      "damage_only": ["কেউ আহত হয়নি", "শুধু গাড়ির ক্ষতি"]
+    },
+    "collision_type": {
+      "head_on": ["মুখোমুখি"],
+      "rear_end": ["পিছন থেকে ধাক্কা", "পেছন থেকে ধাক্কা", "পিছন থেকে"],
+      "side_impact": ["পাশ থেকে ধাক্কা"],
+      "hit_pedestrian": ["পথচারীকে ধাক্কা"],
+      "run_off_road": ["রাস্তা থেকে নেমে"],
+      "overturned": ["উল্টে গেছে", "উল্টে যায়"],
+      "hit_fixed_object": ["খুঁটিতে ধাক্কা", "গাছে ধাক্কা", "দেয়ালে ধাক্কা"]
+    },
+    "hit_and_run": { "yes": ["পালিয়ে গেছে", "পালিয়ে যায়"] },
+    "road_category": {
+      "national_highway": ["জাতীয় সড়ক", "ন্যাশনাল হাইওয়ে"],
+      "state_highway": ["রাজ্য সড়ক"],
+      "district_road": ["জেলা সড়ক"],
+      "urban_road": ["শহরের রাস্তা"],
+      "village_road": ["গ্রামের রাস্তা"]
+    },
+    "area_type": { "urban": ["শহর এলাকা", "শহরের মধ্যে"], "rural": ["গ্রাম এলাকা", "গ্রামাঞ্চল"] },
+    "road_surface_condition": {
+      "dry": ["রাস্তা শুকনো"],
+      "wet": ["রাস্তা ভেজা", "ভেজা ছিল"],
+      "muddy": ["কাদা ছিল"],
+      "flooded": ["জল জমে"],
+      "damaged": ["গর্ত ছিল", "রাস্তা ভাঙা"]
+    },
+    "road_surface_type": { "bitumen": ["পিচের রাস্তা"], "concrete": ["কংক্রিটের রাস্তা"], "gravel": ["নুড়ি"], "earthen": ["কাঁচা রাস্তা"] },
+    "road_geometry": { "straight": ["রাস্তা সোজা", "সোজা রাস্তা"], "curve": ["বাঁক"], "junction": ["মোড়", "চৌমাথা"], "bridge": ["সেতু", "ব্রিজ"], "slope": ["ঢাল"] },
+    "lighting": {
+      "daylight": ["দিনের আলো", "আলো ভালো ছিল"],
+      "dawn_dusk": ["সন্ধ্যার সময়", "ভোরের দিকে"],
+      "night_street_lights": ["রাস্তার আলো জ্বলছিল"],
+      "night_lights_not_working": ["আলো জ্বলছিল না", "লাইট খারাপ ছিল"],
+      "night_no_lights": ["কোনো আলো ছিল না", "অন্ধকার ছিল"]
+    },
+    "weather": { "clear": ["আবহাওয়া পরিষ্কার", "আকাশ পরিষ্কার"], "rain": ["বৃষ্টি"], "fog": ["কুয়াশা"], "storm": ["ঝড়"] },
+    "road_signs_present": { "yes": ["রাস্তার চিহ্ন ছিল"], "no": ["কোনো চিহ্ন ছিল না", "রাস্তার চিহ্ন ছিল না"] },
+    "vehicle_type": {
+      "truck": ["ট্রাক"],
+      "bus": ["বাস"],
+      "car": ["প্রাইভেট কার", "চার চাকা"],
+      "two_wheeler": ["বাইক", "মোটরসাইকেল", "স্কুটার"],
+      "auto_rickshaw": ["অটো"],
+      "e_rickshaw": ["টোটো", "ই-রিকশা"],
+      "bicycle": ["সাইকেল"],
+      "tractor": ["ট্রাক্টর"]
+    },
+    "vehicle_maneuver": {
+      "going_straight": ["সোজা যাচ্ছিল"],
+      "overtaking": ["ওভারটেক"],
+      "turning": ["ঘুরছিল", "বাঁক নিচ্ছিল"],
+      "reversing": ["পিছিয়ে"],
+      "parked": ["দাঁড়িয়ে ছিল", "পার্ক করা"]
+    },
+    "vehicle_damage": { "minor": ["সামান্য ক্ষতি"], "major": ["অনেক ক্ষতি"], "total": ["সম্পূর্ণ ক্ষতিগ্রস্ত", "পুরো ভেঙে"] },
+    "load_condition": { "empty": ["খালি ছিল"], "overloaded": ["অতিরিক্ত বোঝাই", "বেশি মাল"] },
+    "person_role": { "driver": ["চালক", "ড্রাইভার"], "passenger": ["যাত্রী"], "pedestrian": ["পথচারী"], "cyclist": ["সাইকেল আরোহী"] },
+    "person_gender": { "male": ["পুরুষ"], "female": ["মহিলা"] },
+    "injury_severity": {
+      "killed": ["মারা গেছে", "মৃত্যু হয়েছে"],
+      "grievous": ["গুরুতর আহত"],
+      "minor": ["সামান্য আহত"],
+      "uninjured": ["আঘাত পায়নি", "আহত হয়নি"]
+    },
+    "safety_device": {
+      "helmet_worn": ["হেলমেট পরা ছিল"],
+      "helmet_not_worn": ["হেলমেট পরা ছিল না", "হেলমেট ছিল না"],
+      "seatbelt_worn": ["সিট বেল্ট বাঁধা ছিল"],
+      "seatbelt_not_worn": ["সিট বেল্ট বাঁধা ছিল না"]
+    }
+  },
+  "numberCues": {
+    "vehicles_count": { "before": ["গাড়ি জড়িত", "গাড়ি"] },
+    "persons_killed": { "before": ["মারা গেছে"], "zero": ["কেউ মারা যায়নি", "কোনো মৃত্যু হয়নি"] },
+    "persons_grievous": { "before": ["গুরুতর আহত"], "zero": ["কেউ গুরুতর আহত হয়নি"] },
+    "persons_minor": { "before": ["সামান্য আহত"] },
+    "person_age": { "after": ["বয়স"] },
+    "skid_marks_m": { "after": ["চাকার দাগ", "স্কিড মার্ক"] }
+  },
+  "textPatterns": {
+    "road_name_number": [{ "regex": "([0-9]+)\\s*নং\\s*জাতীয় সড়ক", "template": "NH-$1" }]
+  },
+  "questions": {},
+  "ruleQuestions": {
+    "nightButDaylight": "দুর্ঘটনা {time}-এ হয়েছিল, কিন্তু আলোর অবস্থা \"{lighting}\" লেখা আছে। কোনটি সঠিক?",
+    "fatalButNoDeaths": "গুরুত্ব \"{severity}\" লেখা আছে, কিন্তু কারও মৃত্যুর তথ্য নেই। কতজন মারা গেছেন?",
+    "deathsButNotFatal": "{killed} জন মারা গেছেন, কিন্তু গুরুত্ব \"{severity}\" লেখা আছে। কোনটি সঠিক?",
+    "vehicleCountMismatch": "{count}টি গাড়ির কথা বলা হয়েছে, কিন্তু {described}টির বিবরণ আছে। মোট কতটি গাড়ি জড়িত ছিল?"
+  },
+  "instancePrefix": { "vehicles": "গাড়ি {n}{detail}: ", "persons": "ব্যক্তি {n}{detail}: " }
+}

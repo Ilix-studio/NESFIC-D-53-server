@@ -1,0 +1,257 @@
+{
+  "schemaId": "edar-placeholder",
+  "version": "0.1.0",
+  "placeholder": true,
+  "note": "PLACEHOLDER schema for prototyping only. These are representative fields chosen by the VoiceDAR team, NOT the official MoRTH eDAR field list. Replace with the schema shared by the Assam Transport Department.",
+  "sections": [
+    {
+      "id": "crash",
+      "label_en": "Crash details",
+      "label_as": "দুৰ্ঘটনাৰ বিৱৰণ",
+      "hint_en": "what happened, when, severity",
+      "repeatable": false
+    },
+    {
+      "id": "road",
+      "label_en": "Road and environment",
+      "label_as": "পথ আৰু পৰিৱেশ",
+      "hint_en": "surface, lighting, weather, signs",
+      "repeatable": false
+    },
+    {
+      "id": "vehicles",
+      "label_en": "Vehicles",
+      "label_as": "বাহন",
+      "hint_en": "type, registration, position, damage",
+      "repeatable": true
+    },
+    {
+      "id": "persons",
+      "label_en": "Persons",
+      "label_as": "ব্যক্তি",
+      "hint_en": "drivers, passengers, pedestrians, injuries",
+      "repeatable": true
+    }
+  ],
+  "fields": [
+    { "id": "crash_datetime", "section": "crash", "label_en": "Date and time of crash", "label_as": "দুৰ্ঘটনাৰ তাৰিখ আৰু সময়", "type": "datetime", "required": true, "priority": 1 },
+    { "id": "crash_location", "section": "crash", "label_en": "Crash location (GPS)", "label_as": "দুৰ্ঘটনাৰ স্থান (জিপিএছ)", "type": "geo", "required": true, "priority": 1, "auto": "gps" },
+    { "id": "place_description", "section": "crash", "label_en": "Landmark / place description", "label_as": "স্থানৰ বিৱৰণ / চিনাকি ঠাই", "type": "text", "required": false, "priority": 3 },
+    { "id": "police_station", "section": "crash", "label_en": "Police station", "label_as": "থানা", "type": "text", "required": true, "priority": 1, "auto": "login" },
+    { "id": "district", "section": "crash", "label_en": "District", "label_as": "জিলা", "type": "text", "required": true, "priority": 1, "auto": "login" },
+    {
+      "id": "severity", "section": "crash", "label_en": "Crash severity", "label_as": "দুৰ্ঘটনাৰ গুৰুত্ব", "type": "enum", "required": true, "priority": 1,
+      "options": [
+        { "code": "fatal", "label_en": "Fatal", "label_as": "মৃত্যুজনিত" },
+        { "code": "grievous", "label_en": "Grievous injury", "label_as": "গুৰুতৰ আঘাত" },
+        { "code": "minor", "label_en": "Minor injury", "label_as": "সামান্য আঘাত" },
+        { "code": "damage_only", "label_en": "Damage only", "label_as": "কেৱল সম্পত্তিৰ ক্ষতি" }
+      ]
+    },
+    {
+      "id": "collision_type", "section": "crash", "label_en": "Collision type", "label_as": "খুন্দাৰ ধৰণ", "type": "enum", "required": true, "priority": 2,
+      "options": [
+        { "code": "head_on", "label_en": "Head-on", "label_as": "মুখামুখি খুন্দা" },
+        { "code": "rear_end", "label_en": "Hit from behind", "label_as": "পিছফালৰ পৰা খুন্দা" },
+        { "code": "side_impact", "label_en": "Hit from the side", "label_as": "কাষৰ পৰা খুন্দা" },
+        { "code": "hit_pedestrian", "label_en": "Hit pedestrian", "label_as": "পথচাৰীক খুন্দা" },
+        { "code": "run_off_road", "label_en": "Ran off the road", "label_as": "পথৰ পৰা বাহিৰলৈ ওলাই যোৱা" },
+        { "code": "overturned", "label_en": "Overturned", "label_as": "বাগৰি পৰা" },
+        { "code": "hit_fixed_object", "label_en": "Hit fixed object", "label_as": "স্থিৰ বস্তুত খুন্দা" },
+        { "code": "other", "label_en": "Other", "label_as": "অন্যান্য" }
+      ]
+    },
+    {
+      "id": "hit_and_run", "section": "crash", "label_en": "Hit and run", "label_as": "খুন্দা মাৰি পলায়ন", "type": "enum", "required": false, "priority": 2,
+      "options": [
+        { "code": "yes", "label_en": "Yes", "label_as": "হয়" },
+        { "code": "no", "label_en": "No", "label_as": "নহয়" }
+      ]
+    },
+    { "id": "vehicles_count", "section": "crash", "label_en": "Vehicles involved", "label_as": "জড়িত বাহনৰ সংখ্যা", "type": "number", "required": true, "priority": 1 },
+    { "id": "persons_killed", "section": "crash", "label_en": "Persons killed", "label_as": "মৃতকৰ সংখ্যা", "type": "number", "required": true, "priority": 1 },
+    { "id": "persons_grievous", "section": "crash", "label_en": "Persons grievously injured", "label_as": "গুৰুতৰ আহতৰ সংখ্যা", "type": "number", "required": true, "priority": 2 },
+    { "id": "persons_minor", "section": "crash", "label_en": "Persons with minor injuries", "label_as": "সামান্য আহতৰ সংখ্যা", "type": "number", "required": false, "priority": 3 },
+    { "id": "brief_description", "section": "crash", "label_en": "Brief description", "label_as": "দুৰ্ঘটনাৰ চমু বিৱৰণ", "type": "text", "required": false, "priority": 4 },
+    { "id": "witness_contact", "section": "crash", "label_en": "Witness phone", "label_as": "সাক্ষীৰ ফোন নম্বৰ", "type": "text", "required": false, "priority": 4 },
+
+    {
+      "id": "road_category", "section": "road", "label_en": "Road category", "label_as": "পথৰ শ্ৰেণী", "type": "enum", "required": true, "priority": 1,
+      "options": [
+        { "code": "national_highway", "label_en": "National Highway", "label_as": "ৰাষ্ট্ৰীয় ঘাইপথ" },
+        { "code": "state_highway", "label_en": "State Highway", "label_as": "ৰাজ্যিক ঘাইপথ" },
+        { "code": "district_road", "label_en": "District road", "label_as": "জিলা পথ" },
+        { "code": "urban_road", "label_en": "City road", "label_as": "চহৰৰ পথ" },
+        { "code": "village_road", "label_en": "Village road", "label_as": "গাঁৱলীয়া পথ" }
+      ]
+    },
+    { "id": "road_name_number", "section": "road", "label_en": "Road name or number", "label_as": "পথৰ নাম বা নম্বৰ", "type": "text", "required": false, "priority": 3 },
+    {
+      "id": "area_type", "section": "road", "label_en": "Area type", "label_as": "অঞ্চলৰ ধৰণ", "type": "enum", "required": true, "priority": 2,
+      "options": [
+        { "code": "urban", "label_en": "Urban", "label_as": "চহৰ" },
+        { "code": "rural", "label_en": "Rural", "label_as": "গাঁও" }
+      ]
+    },
+    {
+      "id": "road_surface_condition", "section": "road", "label_en": "Surface condition", "label_as": "পথৰ পৃষ্ঠৰ অৱস্থা", "type": "enum", "required": true, "priority": 2,
+      "options": [
+        { "code": "dry", "label_en": "Dry", "label_as": "শুকান" },
+        { "code": "wet", "label_en": "Wet", "label_as": "তিতা" },
+        { "code": "muddy", "label_en": "Muddy", "label_as": "বোকা" },
+        { "code": "flooded", "label_en": "Waterlogged", "label_as": "পানী জমা" },
+        { "code": "damaged", "label_en": "Potholes / damaged", "label_as": "গাঁত থকা / ভগা" }
+      ]
+    },
+    {
+      "id": "road_surface_type", "section": "road", "label_en": "Surface type", "label_as": "পথৰ পৃষ্ঠৰ প্ৰকাৰ", "type": "enum", "required": false, "priority": 3,
+      "options": [
+        { "code": "bitumen", "label_en": "Bitumen", "label_as": "পিচ" },
+        { "code": "concrete", "label_en": "Concrete", "label_as": "কংক্ৰিট" },
+        { "code": "gravel", "label_en": "Gravel", "label_as": "শিলগুটি" },
+        { "code": "earthen", "label_en": "Earthen", "label_as": "কেঁচা" }
+      ]
+    },
+    {
+      "id": "road_geometry", "section": "road", "label_en": "Road shape at spot", "label_as": "ঘটনাস্থলত পথৰ গঢ়", "type": "enum", "required": false, "priority": 3,
+      "options": [
+        { "code": "straight", "label_en": "Straight", "label_as": "পোন" },
+        { "code": "curve", "label_en": "Curve", "label_as": "বেঁকা" },
+        { "code": "junction", "label_en": "Junction", "label_as": "সংযোগস্থল" },
+        { "code": "bridge", "label_en": "Bridge", "label_as": "দলং" },
+        { "code": "slope", "label_en": "Slope", "label_as": "ঢাল" }
+      ]
+    },
+    {
+      "id": "lighting", "section": "road", "label_en": "Lighting", "label_as": "পোহৰৰ অৱস্থা", "type": "enum", "required": true, "priority": 1,
+      "options": [
+        { "code": "daylight", "label_en": "Daylight", "label_as": "দিনৰ পোহৰ" },
+        { "code": "dawn_dusk", "label_en": "Dawn or dusk", "label_as": "পুৱা বা গধূলি" },
+        { "code": "night_street_lights", "label_en": "Night, street lights", "label_as": "ৰাতি, পথৰ লাইট জ্বলি আছিল" },
+        { "code": "night_lights_not_working", "label_en": "Night, street lights not working", "label_as": "ৰাতি, পথৰ লাইট বেয়া" },
+        { "code": "night_no_lights", "label_en": "Night, no lights", "label_as": "ৰাতি, পথৰ লাইট নাই" }
+      ]
+    },
+    {
+      "id": "weather", "section": "road", "label_en": "Weather", "label_as": "বতৰ", "type": "enum", "required": true, "priority": 2,
+      "options": [
+        { "code": "clear", "label_en": "Clear", "label_as": "পৰিষ্কাৰ" },
+        { "code": "rain", "label_en": "Rain", "label_as": "বৰষুণ" },
+        { "code": "fog", "label_en": "Fog", "label_as": "কুঁৱলী" },
+        { "code": "storm", "label_en": "Storm", "label_as": "ধুমুহা" },
+        { "code": "other", "label_en": "Other", "label_as": "অন্যান্য" }
+      ]
+    },
+    {
+      "id": "traffic_control", "section": "road", "label_en": "Traffic control", "label_as": "যান-বাহন নিয়ন্ত্ৰণ", "type": "enum", "required": false, "priority": 3,
+      "options": [
+        { "code": "none", "label_en": "None", "label_as": "নাই" },
+        { "code": "traffic_police", "label_en": "Traffic police", "label_as": "ট্ৰেফিক পুলিচ" },
+        { "code": "signal", "label_en": "Traffic signal", "label_as": "ট্ৰেফিক লাইট" },
+        { "code": "sign_only", "label_en": "Signs only", "label_as": "কেৱল চিহ্ন" }
+      ]
+    },
+    {
+      "id": "road_signs_present", "section": "road", "label_en": "Road signs present", "label_as": "পথ চিহ্ন আছিলনে", "type": "enum", "required": false, "priority": 3,
+      "options": [
+        { "code": "yes", "label_en": "Yes", "label_as": "হয়" },
+        { "code": "no", "label_en": "No", "label_as": "নহয়" }
+      ]
+    },
+    { "id": "speed_limit_kmph", "section": "road", "label_en": "Speed limit (km/h)", "label_as": "গতিসীমা (কিমি/ঘণ্টা)", "type": "number", "required": false, "priority": 4 },
+    { "id": "skid_marks_m", "section": "road", "label_en": "Skid mark length (m)", "label_as": "চকা পিছলাৰ দাগৰ দৈৰ্ঘ্য (মিটাৰ)", "type": "number", "required": false, "priority": 3 },
+
+    {
+      "id": "vehicle_type", "section": "vehicles", "label_en": "Vehicle type", "label_as": "বাহনৰ প্ৰকাৰ", "type": "enum", "required": true, "priority": 1,
+      "options": [
+        { "code": "truck", "label_en": "Truck", "label_as": "ট্ৰাক" },
+        { "code": "bus", "label_en": "Bus", "label_as": "বাছ" },
+        { "code": "car", "label_en": "Car", "label_as": "কাৰ" },
+        { "code": "two_wheeler", "label_en": "Two-wheeler", "label_as": "দুচকীয়া বাহন" },
+        { "code": "auto_rickshaw", "label_en": "Auto-rickshaw", "label_as": "অটো-ৰিক্সা" },
+        { "code": "e_rickshaw", "label_en": "E-rickshaw", "label_as": "ই-ৰিক্সা" },
+        { "code": "bicycle", "label_en": "Bicycle", "label_as": "চাইকেল" },
+        { "code": "tractor", "label_en": "Tractor", "label_as": "ট্ৰেক্টৰ" },
+        { "code": "other", "label_en": "Other", "label_as": "অন্যান্য" }
+      ]
+    },
+    { "id": "registration_number", "section": "vehicles", "label_en": "Registration number", "label_as": "পঞ্জীয়ন নম্বৰ", "type": "text", "required": true, "priority": 2 },
+    {
+      "id": "vehicle_maneuver", "section": "vehicles", "label_en": "What the vehicle was doing", "label_as": "বাহনখনে কি কৰি আছিল", "type": "enum", "required": false, "priority": 3,
+      "options": [
+        { "code": "going_straight", "label_en": "Going straight", "label_as": "পোনে পোনে গৈ আছিল" },
+        { "code": "overtaking", "label_en": "Overtaking", "label_as": "অভাৰটেক কৰি আছিল" },
+        { "code": "turning", "label_en": "Turning", "label_as": "ঘূৰি আছিল" },
+        { "code": "reversing", "label_en": "Reversing", "label_as": "পিছুৱাই আছিল" },
+        { "code": "parked", "label_en": "Parked", "label_as": "ৰখাই থোৱা আছিল" }
+      ]
+    },
+    {
+      "id": "vehicle_damage", "section": "vehicles", "label_en": "Vehicle damage", "label_as": "বাহনৰ ক্ষতি", "type": "enum", "required": false, "priority": 3,
+      "options": [
+        { "code": "none", "label_en": "None", "label_as": "ক্ষতি হোৱা নাই" },
+        { "code": "minor", "label_en": "Minor", "label_as": "সামান্য" },
+        { "code": "major", "label_en": "Major", "label_as": "বেছি" },
+        { "code": "total", "label_en": "Destroyed", "label_as": "সম্পূৰ্ণ ক্ষতিগ্ৰস্ত" }
+      ]
+    },
+    {
+      "id": "load_condition", "section": "vehicles", "label_en": "Load", "label_as": "বোজা", "type": "enum", "required": false, "priority": 4,
+      "options": [
+        { "code": "empty", "label_en": "Empty", "label_as": "খালী" },
+        { "code": "normal", "label_en": "Normal", "label_as": "সাধাৰণ" },
+        { "code": "overloaded", "label_en": "Overloaded", "label_as": "অতিৰিক্ত বোজাই" }
+      ]
+    },
+    {
+      "id": "insurance_status", "section": "vehicles", "label_en": "Insurance", "label_as": "বীমা", "type": "enum", "required": false, "priority": 4,
+      "options": [
+        { "code": "valid", "label_en": "Valid", "label_as": "বৈধ" },
+        { "code": "expired", "label_en": "Expired", "label_as": "ম্যাদ উকলি গৈছে" },
+        { "code": "none", "label_en": "No insurance", "label_as": "বীমা নাই" }
+      ]
+    },
+    { "id": "vehicle_position", "section": "vehicles", "label_en": "Final position at scene", "label_as": "ঘটনাস্থলত বাহনৰ অৱস্থান", "type": "text", "required": false, "priority": 3 },
+
+    {
+      "id": "person_role", "section": "persons", "label_en": "Role", "label_as": "ভূমিকা", "type": "enum", "required": true, "priority": 1,
+      "options": [
+        { "code": "driver", "label_en": "Driver", "label_as": "চালক" },
+        { "code": "passenger", "label_en": "Passenger", "label_as": "যাত্ৰী" },
+        { "code": "pedestrian", "label_en": "Pedestrian", "label_as": "পথচাৰী" },
+        { "code": "cyclist", "label_en": "Cyclist", "label_as": "চাইকেল আৰোহী" }
+      ]
+    },
+    { "id": "person_vehicle_no", "section": "persons", "label_en": "Vehicle no. in this report", "label_as": "এই প্ৰতিবেদনৰ বাহন নম্বৰ", "type": "number", "required": false, "priority": 3 },
+    {
+      "id": "person_gender", "section": "persons", "label_en": "Gender", "label_as": "লিংগ", "type": "enum", "required": true, "priority": 2,
+      "options": [
+        { "code": "male", "label_en": "Male", "label_as": "পুৰুষ" },
+        { "code": "female", "label_en": "Female", "label_as": "মহিলা" },
+        { "code": "other", "label_en": "Other", "label_as": "অন্যান্য" }
+      ]
+    },
+    { "id": "person_age", "section": "persons", "label_en": "Age (years)", "label_as": "বয়স (বছৰ)", "type": "number", "required": false, "priority": 2 },
+    {
+      "id": "injury_severity", "section": "persons", "label_en": "Injury", "label_as": "আঘাতৰ অৱস্থা", "type": "enum", "required": true, "priority": 1,
+      "options": [
+        { "code": "killed", "label_en": "Killed", "label_as": "মৃত" },
+        { "code": "grievous", "label_en": "Grievous injury", "label_as": "গুৰুতৰ আহত" },
+        { "code": "minor", "label_en": "Minor injury", "label_as": "সামান্য আহত" },
+        { "code": "uninjured", "label_en": "Not injured", "label_as": "আঘাত পোৱা নাই" }
+      ]
+    },
+    {
+      "id": "safety_device", "section": "persons", "label_en": "Helmet / seat belt", "label_as": "হেলমেট / চিট বেল্ট", "type": "enum", "required": false, "priority": 2,
+      "options": [
+        { "code": "helmet_worn", "label_en": "Helmet worn", "label_as": "হেলমেট পিন্ধি আছিল" },
+        { "code": "helmet_not_worn", "label_en": "No helmet", "label_as": "হেলমেট পিন্ধা নাছিল" },
+        { "code": "seatbelt_worn", "label_en": "Seat belt worn", "label_as": "চিট বেল্ট লগাই আছিল" },
+        { "code": "seatbelt_not_worn", "label_en": "No seat belt", "label_as": "চিট বেল্ট লগোৱা নাছিল" },
+        { "code": "not_applicable", "label_en": "Not applicable", "label_as": "প্ৰযোজ্য নহয়" }
+      ]
+    },
+    { "id": "hospital_name", "section": "persons", "label_en": "Taken to hospital", "label_as": "চিকিৎসালয়ৰ নাম", "type": "text", "required": false, "priority": 3 },
+    { "id": "person_name", "section": "persons", "label_en": "Name", "label_as": "নাম", "type": "text", "required": false, "priority": 3 }
+  ]
+}

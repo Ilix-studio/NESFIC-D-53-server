@@ -1,0 +1,28 @@
+{
+  "note": "SYNTHETIC Bengali test data for the PLACEHOLDER Bengali pack. No real people, vehicles or crashes. Same scenario as transcripts.as.json, except the street lights were not working.",
+  "sections": {
+    "crash": "রাত প্রায় নয়টায় ২৭ নং জাতীয় সড়কে একটি ট্রাক একটি বাইককে পিছন থেকে ধাক্কা মারে। দুটি গাড়ি জড়িত। বাইকের চালক গুরুতর আহত। মোট একজন গুরুতর আহত, কেউ মারা যায়নি।",
+    "road": "রাস্তা ভেজা ছিল, একটু আগে বৃষ্টি হয়েছিল। রাস্তার আলো জ্বলছিল না। রাস্তা সোজা, পিচের রাস্তা। গ্রাম এলাকা। চাকার দাগ প্রায় ১২ মিটার।"
+  },
+  "expected": {
+    "crash": {
+      "crash_datetime": "21:00",
+      "road_name_number": "NH-27",
+      "road_category": "national_highway",
+      "collision_type": "rear_end",
+      "vehicles_count": 2,
+      "severity": "grievous",
+      "persons_grievous": 1,
+      "persons_killed": 0
+    },
+    "road": {
+      "road_surface_condition": "wet",
+      "weather": "rain",
+      "lighting": "night_lights_not_working",
+      "road_geometry": "straight",
+      "road_surface_type": "bitumen",
+      "area_type": "rural",
+      "skid_marks_m": 12
+    }
+  }
+}

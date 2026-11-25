@@ -1,0 +1,79 @@
+{
+  "note": "SYNTHETIC test data. No real people, vehicles or crashes. Scenario: a truck hits a motorbike from behind on a national highway at night, in the rain.",
+  "sections": {
+    "crash": "ৰাতি প্ৰায় ন বজাত ২৭ নং জাতীয় ঘাইপথত এখন ট্ৰাকে এখন বাইকক পিছফালৰ পৰা খুন্দা মাৰে। দুখন বাহন জড়িত। বাইকৰ চালকজন গুৰুতৰ আহত হৈছে। মুঠ এজন গুৰুতৰ আহত, কোনো মৃত্যু হোৱা নাই।",
+    "road": "পথটো তিতা আছিল, অলপ আগতে বৰষুণ দিছিল। পোহৰ ভালেই আছিল। পথটো পোন, পিচৰ পথ। ওচৰত কোনো পথ চিহ্ন নাছিল। গাঁও অঞ্চল। চকা পিছলাৰ দাগ প্ৰায় ১২ মিটাৰ।",
+    "vehicles": "প্ৰথম বাহনখন এখন ট্ৰাক, অতিৰিক্ত বোজা লৈ অভাৰটেক কৰি আছিল। ট্ৰাকখনৰ সামান্য ক্ষতি হৈছে। দ্বিতীয় বাহনখন এখন বাইক, নম্বৰ AS01 CD 5678, পোনে পোনে গৈ আছিল। বাইকখন সম্পূৰ্ণ ক্ষতিগ্ৰস্ত।",
+    "persons": "প্ৰথম জন বাইকৰ চালক, পুৰুষ, বয়স প্ৰায় ২৪ বছৰ। তেওঁ গুৰুতৰ আহত, হেলমেট পিন্ধা নাছিল। দ্বিতীয় জন ট্ৰাকৰ চালক, পুৰুষ, বয়স ৪০ বছৰ, আঘাত পোৱা নাই।"
+  },
+  "followupAnswers": {
+    "registration_number": "ট্ৰাকখনৰ নম্বৰ AS01 AB 1234",
+    "lighting": "ৰাতি আছিল, পথৰ লাইট জ্বলা নাছিল",
+    "weather": "বৰষুণ দি আছিল",
+    "persons_killed": "কোনো মৃত্যু হোৱা নাই",
+    "vehicles_count": "দুখন বাহন",
+    "safety_device": "হেলমেট পিন্ধা নাছিল",
+    "_default": "নাজানো"
+  },
+  "onDevice": {
+    "note": "SIMULATED on-device ASR output for the offline demo engine: the same clips as 'sections', heard by a weaker phone model. It drops the road number, mishears the skid-mark length (১২ → ২) and spells out the Latin number plate, so the server's re-check after sync has three things to suggest.",
+    "sections": {
+      "crash": "ৰাতি প্ৰায় ন বজাত জাতীয় ঘাইপথত এখন ট্ৰাকে এখন বাইকক পিছফালৰ পৰা খুন্দা মাৰে। দুখন বাহন জড়িত। বাইকৰ চালকজন গুৰুতৰ আহত হৈছে। মুঠ এজন গুৰুতৰ আহত, কোনো মৃত্যু হোৱা নাই।",
+      "road": "পথটো তিতা আছিল, অলপ আগতে বৰষুণ দিছিল। পোহৰ ভালেই আছিল। পথটো পোন, পিচৰ পথ। ওচৰত কোনো পথ চিহ্ন নাছিল। গাঁও অঞ্চল। চকা পিছলাৰ দাগ প্ৰায় ২ মিটাৰ।",
+      "vehicles": "প্ৰথম বাহনখন এখন ট্ৰাক, অতিৰিক্ত বোজা লৈ অভাৰটেক কৰি আছিল। ট্ৰাকখনৰ সামান্য ক্ষতি হৈছে। দ্বিতীয় বাহনখন এখন বাইক, নম্বৰ এ এছ শূন্য এক চি ডি পাঁচ ছয় সাত আঠ, পোনে পোনে গৈ আছিল। বাইকখন সম্পূৰ্ণ ক্ষতিগ্ৰস্ত।",
+      "persons": "প্ৰথম জন বাইকৰ চালক, পুৰুষ, বয়স প্ৰায় ২৪ বছৰ। তেওঁ গুৰুতৰ আহত, হেলমেট পিন্ধা নাছিল। দ্বিতীয় জন ট্ৰাকৰ চালক, পুৰুষ, বয়স ৪০ বছৰ, আঘাত পোৱা নাই।"
+    }
+  },
+  "spoken": {
+    "note": "The sections as an officer would say them: numbers and the number plate in words. Read aloud by a synthetic voice into server/test-data/audio (npm run make-test-audio) to test real speech recognition end to end.",
+    "sections": {
+      "crash": "ৰাতি প্ৰায় ন বজাত সাতাইশ নং জাতীয় ঘাইপথত এখন ট্ৰাকে এখন বাইকক পিছফালৰ পৰা খুন্দা মাৰে। দুখন বাহন জড়িত। বাইকৰ চালকজন গুৰুতৰ আহত হৈছে। মুঠ এজন গুৰুতৰ আহত, কোনো মৃত্যু হোৱা নাই।",
+      "road": "পথটো তিতা আছিল, অলপ আগতে বৰষুণ দিছিল। পোহৰ ভালেই আছিল। পথটো পোন, পিচৰ পথ। ওচৰত কোনো পথ চিহ্ন নাছিল। গাঁও অঞ্চল। চকা পিছলাৰ দাগ প্ৰায় বাৰ মিটাৰ।",
+      "vehicles": "প্ৰথম বাহনখন এখন ট্ৰাক, অতিৰিক্ত বোজা লৈ অভাৰটেক কৰি আছিল। ট্ৰাকখনৰ সামান্য ক্ষতি হৈছে। দ্বিতীয় বাহনখন এখন বাইক, নম্বৰ এ এছ শূন্য এক চি ডি পাঁচ ছয় সাত আঠ, পোনে পোনে গৈ আছিল। বাইকখন সম্পূৰ্ণ ক্ষতিগ্ৰস্ত।",
+      "persons": "প্ৰথম জন বাইকৰ চালক, পুৰুষ, বয়স প্ৰায় চৌবিশ বছৰ। তেওঁ গুৰুতৰ আহত, হেলমেট পিন্ধা নাছিল। দ্বিতীয় জন ট্ৰাকৰ চালক, পুৰুষ, বয়স চল্লিশ বছৰ, আঘাত পোৱা নাই।"
+    }
+  },
+  "expected": {
+    "crash": {
+      "crash_datetime": "21:00",
+      "road_name_number": "NH-27",
+      "road_category": "national_highway",
+      "collision_type": "rear_end",
+      "vehicles_count": 2,
+      "severity": "grievous",
+      "persons_grievous": 1,
+      "persons_killed": 0
+    },
+    "road": {
+      "road_surface_condition": "wet",
+      "weather": "rain",
+      "lighting": "daylight",
+      "road_geometry": "straight",
+      "road_surface_type": "bitumen",
+      "road_signs_present": "no",
+      "area_type": "rural",
+      "skid_marks_m": 12
+    },
+    "vehicles": {
+      "vehicle_type@1": "truck",
+      "load_condition@1": "overloaded",
+      "vehicle_maneuver@1": "overtaking",
+      "vehicle_damage@1": "minor",
+      "vehicle_type@2": "two_wheeler",
+      "registration_number@2": "AS01 CD 5678",
+      "vehicle_maneuver@2": "going_straight",
+      "vehicle_damage@2": "total"
+    },
+    "persons": {
+      "person_role@1": "driver",
+      "person_gender@1": "male",
+      "person_age@1": 24,
+      "injury_severity@1": "grievous",
+      "safety_device@1": "helmet_not_worn",
+      "person_role@2": "driver",
+      "person_gender@2": "male",
+      "person_age@2": 40,
+      "injury_severity@2": "uninjured"
+    }
+  }
+}
